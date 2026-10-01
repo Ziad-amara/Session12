@@ -1,5 +1,4 @@
 ﻿using Day_01_G03;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Session12
 {
@@ -7,7 +6,7 @@ namespace Session12
     {
         static void Main(string[] args)
         {
-            #region Restriction Operators - where
+            #region Restriction Operators
 
             #region question1
 
@@ -30,9 +29,9 @@ namespace Session12
             // 2. Find all products that are in stock and cost more than 3.00 per unit.
 
             // Fluent Syntax
-            //var result2 = ListGenerator.ProductsList.Where(p => p.UnitsInStock > 0 && p.UnitPrice > 3.00M);
+            //var result = ListGenerator.ProductsList.Where(p => p.UnitsInStock > 0 && p.UnitPrice > 3.00M);
 
-            // Quesry syntax
+            // Query syntax
 
             //var result =
             //            from p in ListGenerator.ProductsList
@@ -45,10 +44,10 @@ namespace Session12
 
             // Returns digits whose name is shorter than their value.
 
+            //String[] Arr = { "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" };
 
             // Fluent syntax
-            //String[] Arr = { "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" };
-            //var result3 = Arr.Where((word, index) => word.Length < index);
+            //var result = Arr.Where((word, index) => word.Length < index);
 
 
             // Query Syntax
@@ -68,7 +67,7 @@ namespace Session12
             // 1. Get first Product out of Stock  
 
             // Fluent syntax
-            //var result = ListGenerator.ProductsList.FirstOrDefault(p => p.UnitsInStock == 0);
+            //var result = ListGenerator.ProductsList.First(p => p.UnitsInStock == 0);
 
             // Query syntax
             //var result =
@@ -478,7 +477,7 @@ namespace Session12
 
             // 4. Determine if the value of int in an array match their position
 
-            // int[] Arr = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+            //int[] Arr = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
 
             // Fluent syntax
             //var result = Arr
@@ -487,8 +486,7 @@ namespace Session12
             //                    Value = value,
             //                    Index = index,
             //                    Match = value == index
-            //                })
-            //                .Where(x => x.Match);
+            //                });
 
             // Query syntax
             //var result =
@@ -497,8 +495,13 @@ namespace Session12
             //                Value = value,
             //                Index = index
             //            })
-            //            where item.Value == item.Index
-            //            select item;
+            //            select new
+            //            {
+            //                item.Value,
+            //                item.Index,
+            //                Match = item.Value == item.Index
+            //            };
+
             #endregion
 
             #region question5
@@ -549,7 +552,7 @@ namespace Session12
             #endregion
 
             #region question7
-            
+
             // 7. Select all orders where the order was made in 1998 or later
 
             // Fluent syntax
